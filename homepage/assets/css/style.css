@@ -1,0 +1,28 @@
+header {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: white;
+    position: fixed;
+    z-index: 1; 
+    top: 0; 
+    font-size: large;
+}
+.content {
+    margin-left:50px;
+    margin-right: 50px;
+}
+#title {
+    width: 800px;
+    margin-left: 440px ;
+}
+
+#profile-pic {
+    width: auto;
+    margin-top: 80px;
+    margin-left: 450px;
+}
+
+
+
+
