@@ -1,31 +1,29 @@
-header {
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background: white;
-    position: fixed;
-    z-index: 1; 
-    top: 0; 
-    font-size: large;
+#navbar {
+    display: flex; /*Use flexbox to align items horizontally */
+    /* justify-content: flex-end; Align items to the right */
+    background-color: #333; /* Set background color for the navbar */
+    color: white; /* Set text color for the navbar */
+    padding: 10px; /* Add some padding for spacing */
+}
+
+/* Style the navbar items */
+.navbar-item {
+    margin-right: 20px; /*Add margin between navbar items */
+    margin-left: 20px;
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Set text color for links */
+}
+.navbar-item:hover {
+    transform: scale(1.25);
+}
+#title, #navbar, #profile_pic, #name, #resume, #context_channel {
+    display: flex; /* Use flexbox to center horizontally */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
 .content {
-    margin-left:50px;
-    margin-right: 50px;
-}
-#title {
-    width: 800px;
-    margin-left: 440px ;
-}
-
-#profile-pic {
-    width: auto;
-    margin-top: 80px;
-    margin-left: 450px;
-}
-#context-channel {
     margin-left: 350px;
+    margin-right: 350px;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
-
-
-
-
