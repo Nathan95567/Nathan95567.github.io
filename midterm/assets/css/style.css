@@ -1,0 +1,40 @@
+#navbar {
+    display: flex; 
+    justify-content: space-between; 
+    background-color: #333; 
+    color: white; 
+    padding: 10px; 
+}
+.nav--button--area{
+    display: flex;
+    justify-content: center;
+}
+.nav--button{
+    width:fit-content;
+    padding:10px;
+    text-align:center;
+    font-size:14px;
+    color:#fff;
+}
+/* Style the navbar items */
+.navbar-item {
+    margin-right: 20px; /*Add margin between navbar items */
+    margin-left: 20px;
+    text-decoration: none; /* Remove underline from links */
+    color: gree; /* Set text color for links */
+}
+/* .navbar-item:hover {
+    transform: scale(1.25);
+} */
+#title{
+    display: flex; /* Use flexbox to center horizontally */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+.content {
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+.bottombar {
+    background-color: #333;
+}
