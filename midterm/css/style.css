@@ -1,0 +1,105 @@
+html {
+    background-color:#333;
+}
+#navbar {
+    display: flex; 
+    justify-content: space-between; 
+    background-color: blanchedalmond; 
+    color: black; 
+    padding: 10px; 
+}
+.nav--button--area{
+    display: flex;
+    justify-content: center;
+}
+.nav--button{
+    width:fit-content;
+    padding:10px;
+    text-align:center;
+    font-size:14px;
+    color:#fff;
+}
+.navbar-item {
+    margin-right: 20px; /*Add margin between navbar items */
+    margin-left: 20px;
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Set text color for links */
+}
+/* .navbar-item:hover {
+    transform: scale(1.25);
+} */
+#title{
+    display: flex; /* Use flexbox to center horizontally */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+.content {
+    width:100%;
+}
+#title_pic, #now_serving {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#order_button {
+    position: absolute;
+    bottom: 300px;
+    left: 45%;
+    transform: translateY(-45%);
+    padding: 20px;
+    background-color: wheat;
+}
+#title_pic {
+    position: relative;
+    opacity: 0.8;
+}
+.cuisine{
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content:space-around;
+    text-align: center;
+}
+.cuisine2{
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+}
+#cuisine1,#cuisine3{
+    margin-bottom: 20px;
+}
+#cuisine2{
+    margin-top: 20px;
+}
+.centered-content {
+    text-align: center;
+}
+.bottom_timeAndAddress{
+    display: inline-block;
+    text-align: center;
+}
+.bottombar {
+    /* margin: 50px; */
+    display: flex;
+    /* justify-content:space-around; */
+    text-align: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.bottom--button img {
+    display: block; /* Make the image a block element to stack text below it */
+    margin: 10px; 
+}
+.bottom--button:hover {
+    transform: scale(1.25);
+}
+body {
+    color:#fff
+}
+
