@@ -1,22 +1,96 @@
+body{
+    animation: colorchange 10s infinite;
+}
+@keyframes colorchange{
+    0%{background-color: #E2D3CD;}
+    25%{background-color: #E3DAD5;}
+    50%{background-color: #E6CDB5;}
+    75%{background-color: #E3DAD5;}
+    100%{background-color: #E2D3CD;}
+}
 #navbar {
     display: flex; /*Use flexbox to align items horizontally */
-    /* justify-content: flex-end; Align items to the right */
-    background-color: #333; /* Set background color for the navbar */
-    color: white; /* Set text color for the navbar */
     padding: 10px; /* Add some padding for spacing */
 }
 
 /* Style the navbar items */
-.navbar-item {
-    margin-right: 20px; /*Add margin between navbar items */
-    margin-left: 20px;
+.navbar-item, .bottombar-item {
+    font-family: 'Julius Sans One', sans-serif;
+    margin: 2% 2% 2% 2%;
     text-decoration: none; /* Remove underline from links */
-    color: white; /* Set text color for links */
+    text-align: center;
+    background-color: #f6f2dd;
+    width: 100px;
+    padding: 15px;
+    line-height: 30px;
+    height: 30px;
+    border-radius: 5px; /* Made th border be cruve */
+    border-left: 4px double; /* Made th border */
+    border-right: 4px double;
+    border-color: #ff471a;
+    box-shadow: 2px 2px 10px -3px black;
+}
+#name{
+    position: relative;
+}
+.text {
+    position: absolute;
+    font-size: 50px;
+    transform: translate(-50%,-50%);
+}
+#text1{
+    animation: flash1 15s infinite ease-in-out;
+}
+#text2{
+    animation: flash2 15s infinite ease-in-out;
+}
+@keyframes flash1{
+    0%,50%,100%{
+        filter: blur(0);
+        opacity: 1;
+    }
+    25%,75%{
+        filter: blur(1.25em);
+        opacity: 0;
+    }
+}
+@keyframes flash2{
+    0%,50%,100%{        
+        filter: blur(1.25em);
+        opacity: 0;
+    }
+    25%,75%{
+        filter: blur(0);
+        opacity: 1;
+    }
 }
 .navbar-item:hover {
+    transition-delay: 0.1s;
     transform: scale(1.25);
 }
-#title, #navbar, #profile_pic, #name, #resume, #context_channel {
+/* #downarrow{
+    display: none;
+    justify-content: center;
+    align-items: center; 
+} */
+.bottombar-item{
+    display: block; 
+    z-index: 1;
+    transform: translateY(-5px);
+    animation: bounce 1.5s cubic-bezier(0.42, 0, 0.7, 0.5) infinite alternate;
+}
+@keyframes bounce{
+    0% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+#title, #navbar, #profile_pic, #name, #title, #context_channel, #bottombar{
     display: flex; /* Use flexbox to center horizontally */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
@@ -27,3 +101,15 @@
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
 }
+#name{
+    margin: 20px 0;
+}
+.detail{
+    margin: 10px;
+    display: flex; /* Use flexbox to center horizontally */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+.hidden {
+    display: none;
+  }
