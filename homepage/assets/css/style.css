@@ -96,7 +96,7 @@ body{
         transform: translateY(-5px);
     }
 }
-#title, #navbar, #profile_pic, #name, #title, #context_channel, #bottombar, .map{
+#title, #navbar, #profile_pic, #name, #title, #context_channel, #bottombar, #maparea{
     display: flex; /* Use flexbox to center horizontally */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
@@ -119,6 +119,6 @@ body{
 .hidden {
     display: none;
 }
-/* .map{
+.map{
     width:200px
-} */
+}
