@@ -73,11 +73,17 @@ body{
     justify-content: center;
     align-items: center; 
 } */
-.bottombar-item{
-    display: block; 
+#arrow{
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */ 
     z-index: 1;
     transform: translateY(-5px);
     animation: bounce 1.5s cubic-bezier(0.42, 0, 0.7, 0.5) infinite alternate;
+}
+.arrow-item{
+    margin-left: 4%;
+    margin-right: 4%;
 }
 @keyframes bounce{
     0% {
@@ -90,7 +96,7 @@ body{
         transform: translateY(-5px);
     }
 }
-#title, #navbar, #profile_pic, #name, #title, #context_channel, #bottombar{
+#title, #navbar, #profile_pic, #name, #title, #context_channel, #bottombar, .map{
     display: flex; /* Use flexbox to center horizontally */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
