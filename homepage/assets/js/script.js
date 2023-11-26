@@ -15,24 +15,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // function movePortfolio() {
     //     move('detail-portfolio');
     // }
-    function coverProject() {
-        if(!document.getElementById('detail-project').classList.contains('hidden')) {
-            document.getElementById('detail-project').classList.add('hidden');
-        }  
-    }
-    function coverResume() {
-        if(!document.getElementById('detail-resume').classList.contains('hidden')) {
-            document.getElementById('detail-resume').classList.add('hidden');
-        }
-    }
-    function coverPortfolio() {
-        if(!document.getElementById('detail-portfolio').classList.contains('hidden')) {
-            document.getElementById('detail-portfolio').classList.add('hidden');
-        }   
-    }
+    // function coverProject() {
+    //     if(!document.getElementById('detail-project').classList.contains('hidden')) {
+    //         document.getElementById('detail-project').classList.add('hidden');
+    //     }  
+    // }
+    // function coverResume() {
+    //     if(!document.getElementById('detail-resume').classList.contains('hidden')) {
+    //         document.getElementById('detail-resume').classList.add('hidden');
+    //     }
+    // }
+    // function coverPortfolio() {
+    //     if(!document.getElementById('detail-portfolio').classList.contains('hidden')) {
+    //         document.getElementById('detail-portfolio').classList.add('hidden');
+    //     }   
+    // }
     function moveProject() {
-        coverResume;
-        coverPortfolio;
+        // coverResume;
+        // coverPortfolio;
         if(document.getElementById('detail-project').classList.contains('hidden')) {
             document.getElementById('detail-project').classList.remove('hidden');
         } 
@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     function moveResume() {
-        coverProject;
-        coverPortfolio;
+        // coverProject;
+        // coverPortfolio;
         if(document.getElementById('detail-resume').classList.contains('hidden')) {
             document.getElementById('detail-resume').classList.remove('hidden');
         } 
@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     function movePortfolio() {
-        coverResume;
-        coverProject;
+        // coverResume;
+        // coverProject;
         if(document.getElementById('detail-portfolio').classList.contains('hidden')) {
             document.getElementById('detail-portfolio').classList.remove('hidden');
         } 
