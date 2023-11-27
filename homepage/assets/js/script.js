@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // coverResume;
         // coverPortfolio;
         if(document.getElementById('detail-project').classList.contains('hidden')) {
+            document.getElementById('test').classList.remove('hidden');
             document.getElementById('detail-project').classList.remove('hidden');
         } 
         else {
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // coverProject;
         // coverPortfolio;
         if(document.getElementById('detail-resume').classList.contains('hidden')) {
+            document.getElementById('test').classList.remove('hidden');
             document.getElementById('detail-resume').classList.remove('hidden');
         } 
         else {
@@ -54,13 +56,21 @@ document.addEventListener('DOMContentLoaded', function() {
         // coverResume;
         // coverProject;
         if(document.getElementById('detail-portfolio').classList.contains('hidden')) {
+            document.getElementById('test').classList.remove('hidden');
             document.getElementById('detail-portfolio').classList.remove('hidden');
         } 
         else {
             document.getElementById('detail-portfolio').classList.add('hidden');
         }
     }
+    function moveBack() {
+        document.getElementById('detail-project').classList.add('hidden');
+        document.getElementById('detail-resume').classList.add('hidden');
+        document.getElementById('detail-portfolio').classList.add('hidden');
+        document.getElementById('test').classList.add('hidden');
+    }
     document.getElementById('project').onclick = moveProject;
     document.getElementById('resume').onclick = moveResume;
     document.getElementById('portfolio').onclick = movePortfolio;
+    document.getElementById('test').onclick = moveBack;
 });
