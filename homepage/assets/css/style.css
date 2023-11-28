@@ -21,7 +21,7 @@ body{
     text-align: center;
     background-color: #f6f2dd;
     width: 100px;
-    padding: 15px;
+    padding: 10px;
     line-height: 30px;
     height: 30px;
     border-radius: 5px; /* Made th border be cruve */
@@ -35,7 +35,7 @@ body{
 }
 .text {
     position: absolute;
-    font-size: 50px;
+    font-size: 30px;
     transform: translate(-50%,-50%);
 }
 #text1{
@@ -78,7 +78,11 @@ body{
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */ 
     z-index: 1;
-    transform: translateY(-5px);
+    transform: translateY(-3px);
+    animation: bounce 1.5s cubic-bezier(0.42, 0, 0.7, 0.5) infinite alternate;
+}
+#test {
+    transform: translateY(-3px);
     animation: bounce 1.5s cubic-bezier(0.42, 0, 0.7, 0.5) infinite alternate;
 }
 .arrow-item{
@@ -87,16 +91,16 @@ body{
 }
 @keyframes bounce{
     0% {
-        transform: translateY(-5px);
+        transform: translateY(-3px);
     }
     50% {
-        transform: translateY(5px);
+        transform: translateY(3px);
     }
     100% {
-        transform: translateY(-5px);
+        transform: translateY(-3px);
     }
 }
-#title, #navbar, #profile_pic, #name, #title, #context_channel, #bottombar, #maparea{
+#title, #navbar, #profile_pic, #name, #context_channel, #bottombar, #maparea{
     display: flex; /* Use flexbox to center horizontally */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
@@ -108,7 +112,7 @@ body{
     align-items: center; /* Center content vertically */
 }
 #name{
-    margin: 20px 0;
+    margin: 10px 0;
 }
 .detail{
     margin: 10px;
@@ -120,11 +124,11 @@ body{
     display: none;
 }
 .map{
-    width:200px;
+    width:150px;
 }
 .row {
 	width: 100%;
-	height: 120px;
+	height: 250px;
 	text-align: center;
     margin-bottom: 100px;
 }
@@ -133,6 +137,8 @@ body{
 	background-color: rgba(0, 0, 0, 0.5);
 	display: inline-block;
 	overflow: hidden;
+    border-radius: 100%;
+    overflow: hidden;
 }
 .row .portfolio-item{
     margin-right: 30px;
@@ -141,6 +147,10 @@ body{
 #detail-portfolio-inside{
     display: block;
 }
-.row .bottombar-item, #navbar .navbar-item, #bottombar .bottombar-item {
+.row .bottombar-item, #navbar .navbar-item, #bottombar .bottombar-item , #test{
     cursor: pointer;
 }
+.scrolldown{
+    transform: translateY(-45%);
+}
+

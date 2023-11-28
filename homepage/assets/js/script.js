@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(document.getElementById('detail-project').classList.contains('hidden')) {
             document.getElementById('test').classList.remove('hidden');
             document.getElementById('detail-project').classList.remove('hidden');
+            document.body.classList.add('scrolldown');
         } 
         else {
             document.getElementById('detail-project').classList.add('hidden');
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(document.getElementById('detail-resume').classList.contains('hidden')) {
             document.getElementById('test').classList.remove('hidden');
             document.getElementById('detail-resume').classList.remove('hidden');
+            document.body.classList.add('scrolldown');
         } 
         else {
             document.getElementById('detail-resume').classList.add('hidden');
@@ -58,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(document.getElementById('detail-portfolio').classList.contains('hidden')) {
             document.getElementById('test').classList.remove('hidden');
             document.getElementById('detail-portfolio').classList.remove('hidden');
+            document.body.classList.add('scrolldown');
         } 
         else {
             document.getElementById('detail-portfolio').classList.add('hidden');
@@ -68,9 +71,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('detail-resume').classList.add('hidden');
         document.getElementById('detail-portfolio').classList.add('hidden');
         document.getElementById('test').classList.add('hidden');
+        document.body.classList.remove('scrolldown')
     }
     document.getElementById('project').onclick = moveProject;
     document.getElementById('resume').onclick = moveResume;
     document.getElementById('portfolio').onclick = movePortfolio;
     document.getElementById('test').onclick = moveBack;
 });
+
