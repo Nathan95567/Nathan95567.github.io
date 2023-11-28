@@ -170,6 +170,6 @@ body{
     cursor: pointer;
 }
 .scrolldown{
-    transform: translateY(-42%);
+    transform: translateY(-40%);
 }
 
