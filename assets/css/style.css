@@ -171,7 +171,7 @@ body{
     cursor: pointer;
 }
 .scrolldown{
-    transform: translateY(-45%);
+    transform: translateY(-40%);
 }
 .project-item{
     font-family: 'Julius Sans One', sans-serif;
