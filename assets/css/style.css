@@ -199,9 +199,3 @@ body{
     padding-left: 10px;
     margin-right: 10px;
 }
-#people::before{
-    content: "\f007";
-}
-#eye::before{
-    content: "\f06e";
-}
