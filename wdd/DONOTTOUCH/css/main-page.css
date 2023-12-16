@@ -34,3 +34,21 @@ h1 {
     justify-content: center;
     align-items: center;
 }
+.navbar-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 2% 2% 2%;
+    text-decoration: none; /* Remove underline from links */
+    text-align: center;
+    background-color: #f6f2dd;
+    padding: 10px;
+    line-height: 30px;
+    height: 30px;
+    border-radius: 5px; /* Made th border be cruve */
+    border-left: 4px double; /* Made th border */
+    border-right: 4px double;
+    border-color: #ff471a;
+    box-shadow: 2px 2px 10px -3px black;
+}
