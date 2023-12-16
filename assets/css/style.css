@@ -100,7 +100,7 @@ body{
         transform: translateY(-3px);
     }
 }
-#title, #navbar, #profile_pic, #name, #context_channel, #bottombar, #maparea, .busuanzi{
+#title, #navbar, #profile_pic, #name, #context_channel, #bottombar, #maparea, .busuanzi, #traffic{
     display: flex; /* Use flexbox to center horizontally */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
