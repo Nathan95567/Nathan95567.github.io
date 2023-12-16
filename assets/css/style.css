@@ -100,7 +100,7 @@ body{
         transform: translateY(-3px);
     }
 }
-#title, #navbar, #profile_pic, #name, #context_channel, #bottombar, #maparea{
+#title, #navbar, #profile_pic, #name, #context_channel, #bottombar, #maparea, .busuanzi{
     display: flex; /* Use flexbox to center horizontally */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
@@ -173,7 +173,18 @@ body{
 .scrolldown{
     transform: translateY(-40%);
 }
-.project-item{
+.project-item, .busuanzi{
     font-family: 'Julius Sans One', sans-serif;
-    font-size: 12px;
+    font-size: 15spx;
+}
+#busuanzi_container_site_uv::after{
+    content: "|";
+    padding-left: 10px;
+    margin-right: 10px;
+}
+#people::before{
+    content: "\f007";
+}
+#eye::before{
+    content: "\f06e";
 }
