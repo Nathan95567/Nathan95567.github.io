@@ -173,7 +173,7 @@ body{
 .scrolldown{
     transform: translateY(-40%);
 }
-.project-item, .busuanzi{
+.project-item, .busuanzi,.traffic{
     font-family: 'Julius Sans One', sans-serif;
     font-size: 15spx;
 }
