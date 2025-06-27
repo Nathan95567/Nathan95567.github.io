@@ -38,10 +38,10 @@ body{
     font-size: 30px;
     transform: translate(-50%,-50%);
 }
-#text1{
+#text1, #img1{
     animation: flash1 15s infinite ease-in-out;
 }
-#text2{
+#text2, #img2{
     animation: flash2 15s infinite ease-in-out;
 }
 @keyframes flash1{
@@ -117,6 +117,9 @@ body{
     display: flex; /* Use flexbox to center horizontally */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
+}
+#title{
+    flex-direction: column;  /* ✅ 新增这行 */
 }
 .content {
     margin-left: 350px;
