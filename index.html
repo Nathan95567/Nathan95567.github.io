@@ -220,7 +220,8 @@ transform: translateX(26px);
 <a href="#home" class="nav-link active text-secondary hover:text-primary transition-colors">Home</a>
 <a href="#projects" class="nav-link text-secondary hover:text-primary transition-colors">Project</a>
 <a href="#blog" class="nav-link text-secondary hover:text-primary transition-colors">Technical Skills</a>
-<a href="#contact" class="nav-link text-secondary hover:text-primary transition-colors">Connect</a>
+<a href="#badge" class="nav-link text-secondary hover:text-primary transition-colors">Badge Wall</a>
+<a href="#contact" class="nav-link text-secondary hover:text-primary transition-colors">Contact</a>
 </div>
 <div class="flex items-center space-x-4">
 <label class="switch">
@@ -237,7 +238,8 @@ transform: translateX(26px);
 <div class="flex flex-col p-4 space-y-4">
 <a href="#home" class="nav-link text-secondary hover:text-primary transition-colors">Home</a>
 <a href="#projects" class="nav-link text-secondary hover:text-primary transition-colors">Project</a>
-<a href="#blog" class="nav-link text-secondary hover:text-primary transition-colors">Skill Set</a>
+<a href="#blog" class="nav-link text-secondary hover:text-primary transition-colors">Technical Skills</a>
+<a href="#badge" class="nav-link text-secondary hover:text-primary transition-colors">Badge Wall</a>
 <a href="#contact" class="nav-link text-secondary hover:text-primary transition-colors">Connect</a>
 </div>
 </div>
@@ -323,7 +325,7 @@ transform: translateX(26px);
 </div>
 </section>
 <!-- 项目展示区域 -->
-<section id="projects" class="section py-20 bg-white">
+<section id="projects" class="section py-20 bg-white scroll-mt-0">
     <div class="max-w-7xl mx-auto px-6">
       <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Project Showcase</h2>
       <p class="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-12">
@@ -628,34 +630,70 @@ Tools & Platforms
 </div>
 </div>
 </section>
+<!-- 徽章墙区域 -->
+<section id="badge" class="section py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Badge Wall</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-12">
+        Here are some certifications and achievements I've earned throughout my learning and professional journey.
+      </p>
+  
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
+        <!-- 徽章卡片示例 -->
+        <div class="bg-[#FFF5EA] rounded-lg p-4 shadow-sm flex flex-col items-center w-full max-w-[200px]">
+            <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="30fae666-388d-4c2f-a546-d2fd15f286be" data-share-badge-host="https://www.credly.com"></div>
+            <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+            <p class="text-sm font-medium text-center text-gray-800 mt-2">AWS Certified Cloud Practitioner</p>
+          </div>
+          
+  
+        <div class="bg-[#FFF5EA] rounded-lg p-4 shadow-sm flex flex-col items-center w-full max-w-[150px]">
+          <img src="https://img.icons8.com/color/48/000000/tableau-software.png" alt="Tableau" class="w-12 h-12 mb-2">
+          <p class="text-sm font-medium text-center text-gray-800">Tableau Certified Analyst</p>
+        </div>
+  
+        <div class="bg-[#FFF5EA] rounded-lg p-4 shadow-sm flex flex-col items-center w-full max-w-[150px]">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" class="w-12 h-12 mb-2">
+          <p class="text-sm font-medium text-center text-gray-800">Google Data Analytics</p>
+        </div>
+  
+        <div class="bg-[#FFF5EA] rounded-lg p-4 shadow-sm flex flex-col items-center w-full max-w-[150px]">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-12 h-12 mb-2">
+          <p class="text-sm font-medium text-center text-gray-800">Python for Data Science</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
 <!-- 联系方式区域 -->
 <section id="contact" class="section py-20 bg-white">
 <div class="max-w-7xl mx-auto px-6">
-<h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">联系我</h2>
-<p class="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-12">如果您对我的项目感兴趣，或者有合作机会，欢迎随时联系我。</p>
+<h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Contact Me</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-12">If you are interested in my project or have any cooperation opportunities, please feel free to contact me at any time.</p>
 <div class="flex flex-col lg:flex-row gap-8">
-<div class="lg:w-1/2">
+<!-- <div class="lg:w-1/2"> -->
+<div class="w-full lg:w-1/2 mx-auto">
 <div class="bg-[#FFF5EA] rounded-lg p-8">
-<h3 class="text-xl font-semibold mb-6">联系信息</h3>
+<h3 class="text-xl font-semibold mb-6">Information</h3>
 <div class="space-y-4 mb-8">
 <div class="flex items-center">
 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
 <i class="ri-mail-line text-primary"></i>
 </div>
 <div>
-<p class="text-sm text-gray-500">邮箱</p>
-<p>chenmingyuan@example.com</p>
+<p class="text-sm text-gray-500">Email Address</p>
+<p>deheng7733@gmail.com</p>
 </div>
 </div>
-<div class="flex items-center">
+<!-- <div class="flex items-center">
 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
 <i class="ri-phone-line text-primary"></i>
 </div>
-<!-- <div>
+<div>
 <p class="text-sm text-gray-500">电话</p>
 <p>+1 3417582743</p>
-</div> -->
 </div>
+</div> -->
 <div class="flex items-center">
 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
 <i class="ri-map-pin-line text-primary"></i>
@@ -666,24 +704,24 @@ Tools & Platforms
 </div>
 </div>
 </div>
-<h3 class="text-xl font-semibold mb-4">社交媒体</h3>
+<h3 class="text-xl font-semibold mb-4">Social Media</h3>
 <div class="flex space-x-4">
-<a href="#" class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors">
+<a href="https://linkedin.com/in/deheng-peng" class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors">
 <i class="ri-linkedin-fill text-[#0077B5]"></i>
 </a>
-<a href="#" class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors">
+<a href="https://github.com/Nathan95567" class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors">
 <i class="ri-github-fill text-secondary"></i>
 </a>
-<a href="#" class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors">
+<!-- <a href="#" class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors">
 <i class="ri-twitter-fill text-[#1DA1F2]"></i>
 </a>
 <a href="#" class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors">
 <i class="ri-wechat-fill text-[#07C160]"></i>
-</a>
+</a> -->
 </div>
 </div>
 </div>
-<div class="lg:w-1/2">
+<!-- <div class="lg:w-1/2">
 <div class="bg-white rounded-lg shadow-md p-8">
 <h3 class="text-xl font-semibold mb-6">Send Message</h3>
 <form>
@@ -708,7 +746,7 @@ Tools & Platforms
 </div>
 </div>
 </div>
-</div>
+</div> -->
 </section>
 <!-- 页脚 -->
 <footer class="bg-secondary text-white py-12">
@@ -719,6 +757,7 @@ Tools & Platforms
 <a href="#home" class="text-white hover:text-primary transition-colors">Home</a>
 <a href="#projects" class="text-white hover:text-primary transition-colors">Project</a>
 <a href="#blog" class="text-white hover:text-primary transition-colors">Skills</a>
+<a href="#badge" class="nav-link text-secondary hover:text-primary transition-colors">Badge Wall</a>
 <a href="#contact" class="text-white hover:text-primary transition-colors">Contact</a>
 </div>
 </div>
