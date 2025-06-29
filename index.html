@@ -850,11 +850,11 @@ Business Analytics
 </div>
 <div class="chat-messages" id="chat-messages">
 <div class="message bot-message">
-Hello! I’m Deheng Peng’s AI Assistant(Beta version)
+Hello! I’m Deheng Peng’s AI Assistant(Beta version), Feel free to ask me any questions about him.
 </div>
 </div>
 <div class="chat-input">
-<input type="text" placeholder="输入你的问题..." id="chat-input">
+<input type="text" placeholder="Enter your question..." id="chat-input">
 <button class="ml-2 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center" id="chat-send">
 <i class="ri-send-plane-fill"></i>
 </button>
@@ -958,86 +958,188 @@ document.body.style.color = '#333333';
 }
 });
 </script>
+
 <script id="chatbot-script">
-document.addEventListener('DOMContentLoaded', function() {
-const chatBotToggle = document.getElementById('chat-bot-toggle');
-const chatBotContainer = document.getElementById('chat-bot-container');
-const chatBotMinimize = document.getElementById('chat-bot-minimize');
-const chatBotClose = document.getElementById('chat-bot-close');
-const chatMessages = document.getElementById('chat-messages');
-const chatInput = document.getElementById('chat-input');
-const chatSend = document.getElementById('chat-send');
-// 预设回复
-const botResponses = {
-  '你好': '你好！欢迎访问我的网站，有什么我可以帮您的吗？',
-  'hi': 'Hello! Welcome to my website. How can I assist you?',
+    document.addEventListener('DOMContentLoaded', function () {
+      const chatBotToggle = document.getElementById('chat-bot-toggle');
+      const chatBotContainer = document.getElementById('chat-bot-container');
+      const chatBotMinimize = document.getElementById('chat-bot-minimize');
+      const chatBotClose = document.getElementById('chat-bot-close');
+      const chatMessages = document.getElementById('chat-messages');
+      const chatInput = document.getElementById('chat-input');
+      const chatSend = document.getElementById('chat-send');
+    
+      const botResponses = [
+        {
+          keywords: ['hi', 'hello', '你好'],
+          response: 'Hello! Welcome to Deheng\'s website. How can I assist you?'
+        },
+        {
+          keywords: ['who is deheng', 'deheng是谁', '谁是deheng', '介绍一下deheng', 'about deheng'],
+          response: "Deheng Peng is a data scientist with degrees from UC Davis (MSBA) and UC Berkeley (BA in Data Science). He has worked on projects in healthcare analytics, AI, and cloud engineering."
+        },
+
+        {
+          keywords: ['who are you', '你是谁', 'assistant'],
+          response: "I'm Deheng Peng's AI assistant. I can answer questions about his education, projects, and skills."
+        },
+        {
+          keywords: ['contact', 'email', 'reach', '联系', '邮箱'],
+          response: 'You can reach him at deheng7733@gmail.com.'
+        },
+        {
+          keywords: ['project', 'projects', '作品', '项目', 'case study'],
+          response: 'Deheng Peng has completed projects like e-commerce sales analysis, churn prediction, and social media sentiment analysis. Check the "Projects" section for details.'
+        },
+        {
+          keywords: ['education', '学历', '学校', 'edu', 'degree'],
+          response: 'Deheng Peng holds an M.S. in Business Analytics from UC Davis and a B.A. in Data Science from UC Berkeley.'
+        },
+        {
+          keywords: ['skill', 'skills', '技能', '擅长', '技术'],
+          response: 'He is skilled in Python, R, SQL, machine learning, statistical analysis, data visualization, and business intelligence.'
+        },
+        {
+          keywords: ['blog', '文章', '写作', '博客'],
+          response: 'Deheng occasionally publishes blogs on data science and analytics, covering topics like machine learning, visualization, and SQL optimization.'
+        }
+      ];
+    
+      function normalize(text) {
+        return text.toLowerCase().replace(/[^\w\u4e00-\u9fa5]/g, '');
+      }
+    
+      function getBotResponse(message) {
+        const cleaned = normalize(message);
+        for (const entry of botResponses) {
+          if (entry.keywords.some(keyword => cleaned.includes(normalize(keyword)))) {
+            return entry.response;
+          }
+        }
+        return `Sorry, I don't have answer about this. You can ask about:
+    – Education
+    – Projects
+    – Skills
+    – Contact Info
+    – Blog posts`;
+      }
+    
+      function addMessage(message, isUser = false) {
+        const msg = document.createElement('div');
+        msg.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+        msg.textContent = message;
+        chatMessages.appendChild(msg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    
+      function sendMessage() {
+        const message = chatInput.value.trim();
+        if (!message) return;
+        addMessage(message, true);
+        chatInput.value = '';
+        setTimeout(() => {
+          const response = getBotResponse(message);
+          addMessage(response);
+        }, 400);
+      }
+    
+      chatSend.addEventListener('click', sendMessage);
+      chatInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') sendMessage();
+      });
+    
+      chatBotToggle.addEventListener('click', () => {
+        chatBotContainer.style.display = (chatBotContainer.style.display === 'flex') ? 'none' : 'flex';
+      });
+      chatBotMinimize.addEventListener('click', () => chatBotContainer.style.display = 'none');
+      chatBotClose.addEventListener('click', () => chatBotContainer.style.display = 'none');
+    });
+    </script>
+    
+<!-- <script id="chatbot-script">
+    document.addEventListener('DOMContentLoaded', function () {
+      const chatBotToggle = document.getElementById('chat-bot-toggle');
+      const chatBotContainer = document.getElementById('chat-bot-container');
+      const chatBotMinimize = document.getElementById('chat-bot-minimize');
+      const chatBotClose = document.getElementById('chat-bot-close');
+      const chatMessages = document.getElementById('chat-messages');
+      const chatInput = document.getElementById('chat-input');
+      const chatSend = document.getElementById('chat-send');
   
-  '你是谁': '我是 Deheng Peng 的 AI 助手，可以回答他的教育背景、项目经历和技能相关问题。',
-  'who are you': "I'm Deheng Peng's AI assistant. I can answer questions about his education, projects, and skills.",
+      function addMessage(message, isUser = false) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        messageElement.classList.add(isUser ? 'user-message' : 'bot-message');
+        messageElement.textContent = message;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
   
-  '联系方式': '你可以通过邮箱 deheng7733@gmail.com 与我联系。',
-  'contact': 'You can reach me at deheng7733@gmail.com.',
+      async function getBotResponse(message) {
+        const prompt = `
+  <|system|>
+  You are Deheng Peng's AI assistant. Deheng is a data scientist with degrees from UC Davis (MSBA) and UC Berkeley (Data Science). He has worked in healthcare analytics, mental health AI, and cloud engineering. Please answer concisely and only about Deheng.
+  <|user|>
+  ${message}
+  <|assistant|>
+        `.trim();
   
-  '项目': 'Deheng Peng 完成了多个项目，包括电商销售分析、客户流失预测、社交媒体情感分析等。详情请浏览“项目”部分。',
-  'projects': 'Deheng Peng has completed several projects, including e-commerce sales analysis, churn prediction, and social media sentiment analysis. Please check the "Projects" section for details.',
+        try {
+          const response = await fetch("https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta", {
+            method: "POST",
+            headers: {
+              "Authorization": "Bearer hf_", // ⛳️替换成你的 token
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ inputs: prompt })
+          });
   
-  '教育背景': 'Deheng Peng 拥有 UC Davis 商业分析硕士学位，以及 UC Berkeley 数据科学本科学位。',
-  'education': 'Deheng Peng holds an M.S. in Business Analytics from UC Davis and a B.A. in Data Science from UC Berkeley.',
+          const data = await response.json();
   
-  '技能': '他擅长使用 Python、R、SQL 进行机器学习、统计分析、数据可视化与商业智能。',
-  'skills': 'He is skilled in Python, R, SQL, machine learning, statistical analysis, data visualization, and business intelligence.',
+          if (data?.error) {
+            console.error("API Error:", data.error);
+            return "Sorry, something went wrong.";
+          }
   
-  '博客': '我会不定期更新数据科学和商业分析相关文章，包括机器学习、可视化和SQL优化等内容。敬请关注。',
-  'blog': 'Deheng occasionally publishes blogs on data science and analytics, covering topics like machine learning, visualization, and SQL optimization.'
-};
-function getBotResponse(message) {
-message = message.toLowerCase();
-for (const key in botResponses) {
-if (message.includes(key.toLowerCase())) {
-return botResponses[key];
-}
-}
-return 'Sorry, I didn’t quite understand your question. You can ask about Deheng Peng’s education, project experience, skills, or contact information.';
-}
-function addMessage(message, isUser = false) {
-const messageElement = document.createElement('div');
-messageElement.classList.add('message');
-messageElement.classList.add(isUser ? 'user-message' : 'bot-message');
-messageElement.textContent = message;
-chatMessages.appendChild(messageElement);
-chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-chatBotToggle.addEventListener('click', function() {
-if (chatBotContainer.style.display === 'flex') {
-chatBotContainer.style.display = 'none';
-} else {
-chatBotContainer.style.display = 'flex';
-}
-});
-chatBotMinimize.addEventListener('click', function() {
-chatBotContainer.style.display = 'none';
-});
-chatBotClose.addEventListener('click', function() {
-chatBotContainer.style.display = 'none';
-});
-function sendMessage() {
-const message = chatInput.value.trim();
-if (message) {
-addMessage(message, true);
-chatInput.value = '';
-setTimeout(() => {
-const response = getBotResponse(message);
-addMessage(response);
-}, 500);
-}
-}
-chatSend.addEventListener('click', sendMessage);
-chatInput.addEventListener('keypress', function(e) {
-if (e.key === 'Enter') {
-sendMessage();
-}
-});
-});
-</script>
+          const output = data?.[0]?.generated_text || '';
+          const assistantReply = output.split('<|assistant|>')[1]?.trim() || output.trim();
+          return assistantReply || "Sorry, I couldn’t generate a response.";
+        } catch (error) {
+          console.error("Fetch error:", error);
+          return "Sorry, I couldn’t connect to the server.";
+        }
+      }
+  
+      async function sendMessage() {
+        const message = chatInput.value.trim();
+        if (message) {
+          addMessage(message, true);
+          chatInput.value = '';
+          const response = await getBotResponse(message);
+          addMessage(response);
+        }
+      }
+  
+      chatSend.addEventListener('click', sendMessage);
+      chatInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          sendMessage();
+        }
+      });
+  
+      chatBotToggle.addEventListener('click', function () {
+        chatBotContainer.style.display = chatBotContainer.style.display === 'flex' ? 'none' : 'flex';
+      });
+      chatBotMinimize.addEventListener('click', function () {
+        chatBotContainer.style.display = 'none';
+      });
+      chatBotClose.addEventListener('click', function () {
+        chatBotContainer.style.display = 'none';
+      });
+    });
+  </script> -->
+  
+    
+    
 </body>
 </html>
